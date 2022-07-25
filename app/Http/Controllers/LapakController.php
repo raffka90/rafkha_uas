@@ -46,7 +46,12 @@ class LapakController extends Controller
     {
         $lapak = new Lapak;
 
-        $lapak =
+        $lapak -> no_lapak =$request->no;
+        $lapak -> jenis_lapak =$request->jenis;
+
+        $lapak ->save();
+
+        return redirect('/lapak');
     }
 
     /**

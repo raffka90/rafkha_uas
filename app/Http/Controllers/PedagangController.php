@@ -32,7 +32,7 @@ class PedagangController extends Controller
      */
     public function create()
     {
-        //
+        return view('/pedagang.form');
     }
 
     /**
