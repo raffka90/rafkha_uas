@@ -23,7 +23,7 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="../../index3.html" class="nav-link">Home</a>
+            <a href="/" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <a href="#" class="nav-link">Contact</a>
@@ -256,7 +256,7 @@
             
             <li class="nav-header">Data Master</li>
             <li class="nav-item">
-                <a href="../gallery.html" class="nav-link">
+                <a href="/pedagang" class="nav-link">
                 <i class="nav-icon far fa-image"></i>
                 <p>
                     Data Pedagang
@@ -264,7 +264,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="../kanban.html" class="nav-link">
+                <a href="/lapak" class="nav-link">
                 <i class="nav-icon fas fa-columns"></i>
                 <p>
                     Data Lapak
@@ -275,13 +275,12 @@
             
         
             
-        
-            
+    
             
             
             <li class="nav-header">PROFILE</li>
             <li class="nav-item">
-                {{-- <a href="#" class="nav-link"> --}}<p>Logout</p>
+                {{-- <a href="#" class="nav-link"> --}}
 
                 <a class="nav-link" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
@@ -337,7 +336,5 @@
     <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="{{asset('dist/js/demo.js')}}"></script>
     </body>
     </html>
