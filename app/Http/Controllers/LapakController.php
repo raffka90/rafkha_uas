@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Lapak;
 
 
 class LapakController extends Controller
@@ -20,7 +21,9 @@ class LapakController extends Controller
     
     public function index()
     {
-        //
+        $nomor = 1;
+        $lapak = Lapak::all();
+        return view('lapak.index', compact('lapak','nomor'));
     }
 
     /**
@@ -30,7 +33,7 @@ class LapakController extends Controller
      */
     public function create()
     {
-        //
+        return view('lapak.form');
     }
 
     /**
@@ -41,7 +44,9 @@ class LapakController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $lapak = new Lapak;
+
+        $lapak =
     }
 
     /**
