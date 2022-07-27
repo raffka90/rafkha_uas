@@ -23,7 +23,7 @@ class LapakController extends Controller
     {
         $nomor = 1;
         $lapak = Lapak::all();
-        return view('lapak.index', compact('lapak','nomor'));
+        return view('page.lapak.index', compact('lapak','nomor'));
     }
 
     /**
@@ -33,7 +33,7 @@ class LapakController extends Controller
      */
     public function create()
     {
-        return view('lapak.form');
+        return view('page.lapak.form');
     }
 
     /**
@@ -73,7 +73,8 @@ class LapakController extends Controller
      */
     public function edit($id)
     {
-        //
+        $lapak = Lapak::find($id);
+        return view('page.lapak.edit',compact('lapak'));
     }
 
     /**
@@ -85,7 +86,14 @@ class LapakController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $lapak = Lapak::find($id);
+
+        $lapak -> no_lapak =$request->no;
+        $lapak -> jenis_lapak =$request->jenis;
+
+        $lapak ->save();
+
+        return redirect('/lapak');
     }
 
     /**
@@ -96,6 +104,9 @@ class LapakController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $lapak = Lapak::find($id);
+        $lapak->delete();
+
+        return redirect('/lapak');
     }
 }

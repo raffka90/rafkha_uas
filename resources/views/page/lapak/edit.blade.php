@@ -35,16 +35,16 @@
             </button>
         </div>
         </div>
-        <form method="POST" action="/lapak/store">
+        <form method="POST" action="/lapak/{{$lapak->id}}">
             @csrf
                 <div class="card-body">
                 <div class="form-group">
                     <label for="exampleInputEmail1">No lapak</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" name="no">
+                    <input type="text" class="form-control" id="exampleInputEmail1" value="{{$lapak->no_lapak}}" name="no">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">jenis Lapak</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" name="jenis">
+                    <input type="text" class="form-control" id="exampleInputPassword1"value="{{$lapak->jenis_lapak}}" name="jenis">
                 </div>
                 {{-- <div class="form-group">
                     <label for="exampleInputPassword1">No Hp</label>

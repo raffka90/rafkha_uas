@@ -35,7 +35,7 @@
             </button>
         </div>
         </div>
-        <form method="POST" action="/pedagang/">
+        <form method="POST" action="/pedagang/{{$pedagang->id}}">
             @csrf
             @method('PUT')
                 <div class="card-body">
@@ -51,10 +51,19 @@
                     <label for="exampleInputPassword1">No Hp</label>
                     <input type="text" class="form-control" id="exampleInputPassword1" name="nohp"  value="{{$pedagang->nohp}}">
                 </div>
-                {{-- <div class="form-group">
-                    <label for="exampleInputPassword1">Jenis Lapak</label>
-                    <input type=text" class="form-control" id="exampleInputPassword1" name="alamat">
-                </div> --}}
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Jenis Lapak</label>
+                    <div class="col-sm-15">
+                      <select name="lapak" class="form-control" id="">
+                        <option value="">-Pilih Jenis-</option>
+                        @foreach ($lapak as $item)
+                          {{-- <option value="{{$item->id}}">{{$item->jenis_lapak}}</option> --}}
+                          <option value="{{$item->id}}" {{$pedagang->lapaks_id==$item->id ? 'selected' : ''}}>{{$item->jenis_lapak}}</option>
+                        @endforeach
+                        
+                      </select>
+                    </div>
+                  </div>
 
 
                 </div>

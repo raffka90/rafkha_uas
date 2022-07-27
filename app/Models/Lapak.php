@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lapak extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+    public function pedagang(){
+        return $this->belongTo(Pedagang::class);
+    }
+     
 }

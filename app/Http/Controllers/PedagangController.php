@@ -22,7 +22,7 @@ class PedagangController extends Controller
     {
         $nomor = 1;
         $pedagang = Pedagang::all();
-        return view('pedagang.index', compact('pedagang','nomor'));
+        return view('page.pedagang.index', compact('pedagang','nomor'));
     }
 
     /**
@@ -32,7 +32,8 @@ class PedagangController extends Controller
      */
     public function create()
     {
-        return view('/pedagang.form');
+        $lapak=Lapak::all();
+        return view('page.pedagang.form',compact('lapak'));
     }
 
     /**
@@ -49,7 +50,7 @@ class PedagangController extends Controller
         $pedagang->nama = $request->nama;
         $pedagang->alamat = $request->alamat;
         $pedagang->nohp = $request->nohp;
-        // $pedagang->lapaks_id = $request->lapak;
+        $pedagang->lapaks_id = $request->lapak;
         // $pedagang->jk = $request->jk;
         // $mhs->agama = $request->agama;
         // $mhs->email = $request->email;
@@ -77,9 +78,9 @@ class PedagangController extends Controller
      */
     public function edit($id)
     {
-        $pedagang = Pedagang::find($id);
+        $pedagang = Pedagang::find($id); 
         $lapak = Lapak::all();
-        return view ('pedagang.edit', compact('pedagang','lapak'));
+        return view ('page.pedagang.edit', compact('pedagang','lapak'));
     }
 
     /**
@@ -97,7 +98,7 @@ class PedagangController extends Controller
         $pedagang->nama = $request->nama;
         $pedagang->alamat = $request->alamat;
         $pedagang->nohp = $request->nohp;
-        // $pedagang->lapaks_id = $request->lapak;
+        $pedagang->lapaks_id = $request->lapak;
         // $pedagang->jk = $request->jk;
         // $mhs->agama = $request->agama;
         // $mhs->email = $request->email;

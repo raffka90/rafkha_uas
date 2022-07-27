@@ -50,6 +50,18 @@
                     <label for="exampleInputPassword1">No Hp</label>
                     <input type="text" class="form-control" id="exampleInputPassword1" name="nohp">
                 </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Jenis Lapak</label>
+                    <div class="col-sm-15">
+                      <select name="lapak" class="form-control" id="">
+                        <option value="">-Pilih Jenis-</option>
+                        @foreach ($lapak as $item)
+                          <option value="{{$item->id}}">{{$item->jenis_lapak}}</option>
+                        @endforeach
+                        
+                      </select>
+                    </div>
+                  </div>
                 {{-- <div class="form-group">
                     <label for="exampleInputPassword1">Jenis Lapak</label>
                     <input type=text" class="form-control" id="exampleInputPassword1" name="alamat">
