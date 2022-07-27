@@ -255,6 +255,8 @@
             </li>
             
             <li class="nav-header">Data Master</li>
+            @can('create',App\Pedagang::class)
+                
             <li class="nav-item">
                 <a href="/pedagang" class="nav-link">
                 <i class="nav-icon far fa-image"></i>
@@ -263,6 +265,9 @@
                 </p>
                 </a>
             </li>
+            @endcan
+
+            @can('create',App\Lapak::class)
             <li class="nav-item">
                 <a href="/lapak" class="nav-link">
                 <i class="nav-icon fas fa-columns"></i>
@@ -271,7 +276,7 @@
                 </p>
                 </a>
             </li>
-            
+            @endcan
             
         
             

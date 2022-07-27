@@ -24,6 +24,7 @@
 
     <!-- Default box -->
     <div class="card">
+      @can('create',App\Lapak::class)
         <div class="card-header">
         <a href="/lapak/form" class="btn btn-primary">Tambah lapak</a>
 
@@ -36,6 +37,7 @@
             </button>
         </div>
         </div>
+        @endcan
             <div class="card-body table-responsive p-0">
                 <table class="table table-hover text-nowrap">
                 <thead>

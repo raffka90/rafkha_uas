@@ -20,6 +20,7 @@ class PedagangController extends Controller
 
     public function index()
     {
+        $this-> authorize('create',Pedagang::class);
         $nomor = 1;
         $pedagang = Pedagang::all();
         return view('page.pedagang.index', compact('pedagang','nomor'));
@@ -44,6 +45,7 @@ class PedagangController extends Controller
      */
     public function store(Request $request)
     {
+        $this-> authorize('create',Pedagang::class);
         $pedagang = new Pedagang;
 
         

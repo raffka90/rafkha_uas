@@ -21,6 +21,7 @@ class LapakController extends Controller
     
     public function index()
     {
+        $this-> authorize('create',Lapak::class);
         $nomor = 1;
         $lapak = Lapak::all();
         return view('page.lapak.index', compact('lapak','nomor'));
@@ -33,6 +34,8 @@ class LapakController extends Controller
      */
     public function create()
     {
+        $this-> authorize('create',Lapak::class);
+
         return view('page.lapak.form');
     }
 
